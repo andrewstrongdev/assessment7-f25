@@ -1,0 +1,35 @@
+Results for the extraLargeArray
+insert 921.204425 ms
+append 7.47332 ms
+
+Results for the largeArray
+insert 10.056529 ms
+append 1.111272 ms
+
+Results for the mediumArray
+insert 263.695 μs
+append 205.64 μs
+
+Results for the smallArray
+insert 104.071 μs
+append 148.656 μs
+
+Results for the tinyArray
+insert 37.858 μs
+append 93.343 μs
+
+                                        * Patterns That I See *
+
+    As the size of the array increases, the runtime for the insert function increases exponentially.
+The runtime for the append function increases linearly. The append function will scale significanly 
+better than the insert function because the exponential growth of the runtime for the insert function 
+can eventually take an amount of time that would be ridicoulous. 
+
+                                            * Extra Credit *
+
+    The insert function is slower because it is using unshift(). unshift() will insert at the beginning
+of an array. Because of the ordered nature of an array this means every other item in an array will have 
+to be rewritten at the next index. At very small array sizes this difference is insignificant and as can 
+be seen in the run times for the tinyArray and the smallArray unshift() can be faster than an alternative.
+With larger arrays, unshift() will have to rewrite significant amounts of data and will not be a good choice.
+
